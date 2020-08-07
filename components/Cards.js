@@ -48,13 +48,14 @@ author.textContent = object.authorName
 
 selectCardsContainer.appendChild(card)
 
+headline.addEventListener('click', event =>{
+    // console.log("works");
+    console.log(headline.textContent);
+})
+
 // return card
 
 }
-
-// headline.addEventListener('click', event =>{
-//     console.log(headline);
-// })
 
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
