@@ -27,7 +27,7 @@ function cardMaker(object){
 const card = document.createElement('div')
 const headline = document.createElement('div')
 const authorContainer = document.createElement('div')
-const imgContainer = createElement('div')
+const imgContainer = document.createElement('div')
 const img = document.createElement('img')
 const author = document.createElement('span')
 
@@ -48,16 +48,32 @@ author.textContent = object.authorName
 
 selectCardsContainer.appendChild(card)
 
-return card
+// return card
 
 }
 
-headline.addEventListener('click', event =>{
-    console.log(headline);
+// headline.addEventListener('click', event =>{
+//     console.log(headline);
+// })
+
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+.then(response => {
+    const articles = response.data.articles
+    //giving keys of obj ex:bootstrap then node
+    for (let entry in articles) {
+        articles[entry].forEach(cardData => cardMaker(cardData))
+      }
 })
 
 
-data.forEach(objectData => {
-let cardCreator = cardMaker(objectData)
-selectCardsContainer.appendChild(cardCreator)
-})
+
+
+// axios.get('https://lambda-times-api.herokuapp.com/articles')
+// .then(response => {
+//     const entry = response.data.articles
+//     entry.forEach( entry => {
+//         console.log(entry);
+//         entry.forEach(cardData => cardMaker(cardData))
+//     })
+// })

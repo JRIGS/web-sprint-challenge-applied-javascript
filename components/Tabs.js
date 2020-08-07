@@ -13,13 +13,15 @@
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
 .then(response => {
-    console.log(response.data);
+    for (let dataItem of response.data.topics) {
+        addTab(dataItem)
+      }
 })
 
 
 const selectTopics = document.querySelector('.topics')
 
-function addTab(objectData){
+function addTab(topic){
 
 const tab = document.createElement('div')
 // const topic = document.createElement('p')
@@ -27,9 +29,9 @@ const tab = document.createElement('div')
 selectTopics.appendChild(tab)
 // tab.appendChild(topic)
 
-tab.textContent = "objectData.data.topics"
-
 tab.classList.add("tab")
 
+tab.textContent = topic
+
+
 }
-addTab()
