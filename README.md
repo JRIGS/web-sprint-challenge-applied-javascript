@@ -27,14 +27,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
-
+The DOM allows your manipulate a web page how you like by adding contents and events
 2. What is an event?
-
+"things" that are going to happen on the element you selected
 3. What is an event listener?
-
+A method being called when an event is triggered
 4. Why would we convert a NodeList into an Array?
-
+It allows us to access those dom elements and manipulate them
 5. What is a component?
+A component is a like a building block for your code and once one is created it can be reused to make work flow more simple
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
