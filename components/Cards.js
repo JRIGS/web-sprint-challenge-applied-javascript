@@ -17,6 +17,47 @@
 //   </div>
 // </div>
 //
-// Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
+// Add a listener for click events so that when a user clicks on a card,
+// the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+const selectCardsContainer = document.querySelector(".cards-container")
+
+function cardMaker(object){
+const card = document.createElement('div')
+const headline = document.createElement('div')
+const authorContainer = document.createElement('div')
+const imgContainer = createElement('div')
+const img = document.createElement('img')
+const author = document.createElement('span')
+
+card.appendChild(headline)
+card.appendChild(authorContainer)
+authorContainer.appendChild(imgContainer)
+imgContainer.appendChild(img)
+authorContainer.appendChild(author)
+
+card.classList.add("card")
+headline.classList.add("headline")
+authorContainer.classList.add("author")
+imgContainer.classList.add("img-container")
+
+headline.textContent = object.headline
+img.src = object.authorPhoto
+author.textContent = object.authorName
+
+selectCardsContainer.appendChild(card)
+
+return card
+
+}
+
+headline.addEventListener('click', event =>{
+    console.log(headline);
+})
+
+
+data.forEach(objectData => {
+let cardCreator = cardMaker(objectData)
+selectCardsContainer.appendChild(cardCreator)
+})
